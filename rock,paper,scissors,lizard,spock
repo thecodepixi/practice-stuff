@@ -1,0 +1,105 @@
+/* attempting to create a rock,paper,scissors,lizard,spock game
+having some syntax errors so far */  
+
+var userChoice = prompt("Do you choose rock, paper, scissors, lizard, or spock?");
+var computerChoice = Math.random();
+/* begin computer choice with random number definitions */
+if (computerChoice <= 0.16) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.32) {
+	computerChoice = "paper";
+} else if(computerChoice <= 0.48) {
+	computerChoice = "scissors";
+}	else if(computerChoice <= 0.64) {
+	computerChoice = "lizard";
+}	else {
+	computerChoice = "spock";
+} /* closing computer choice brackets */
+
+console.log("Computer: " + computerChoice);
+
+/* begin defining computer choice and user choice interactions and outcomes */ 
+
+var compare = function(choice1, choice2) { /* opening compare function brackets */ 
+    if (choice1 === choice2) {
+        return "The result is a tie!";
+    } /* closing tie brackets */ 
+    /* first choice is rock */
+    else if (choice1 === "rock") {
+        if (choice2 === "scissors") {
+            return "Rock wins";
+        } /* closing scissors brackets */
+        else if (choice2 ==="paper") {
+            return "Paper wins";
+        } /* closing paper brackets */ 
+        else if (choice2 === "lizard") {
+           return "Rock wins";
+        } /* closing lizard brackets */ 
+        else {
+           return "Spock wins";
+        } /*closing spock brackets */ 
+    } /* closing rock choice brackets */ 
+    /* then paper */ 
+    else if (choice1 === "paper") {
+        if (choice2 === "rock") {
+            return "Paper wins";
+        }
+        else if (choice2 === "scissors") {
+            return "Scissors wins";
+        }
+        else if (choice2 === "lizard") {
+           return "Lizard wins";
+        }
+        else {
+        return "Paper wins";
+       }
+    } /* closing paper brackets */ 
+    /* now scissors */ 
+    else if (choice1 === "scissors") {
+        if (choice2 === "rock") {
+         return "Rock wins";
+        }
+        else if (choice2 === "paper") {
+         return "Scissors wins";
+        }
+        else if (choice2 === "lizard") {
+         return "Scissors wins";
+        }
+        else {
+         return "Spock wins";
+        }
+      } /* closing scissors brackets */ 
+      /* and lizard */ 
+    else if (choice1 === "lizard") {
+       if (choice2 === "rock") {
+           return "Rock wins";
+        }
+       else if (choice2 === "scissors") {
+           return "Scissors wins";
+        }
+       else if (choice2 === "paper") {
+           return "Lizard wins";
+        }
+        else {
+           return "Lizard wins";
+        }
+      } /* closing lizard brackets */ 
+      /* and finally spock */ 
+    else if (choice1 === "spock") {
+       if (choice2 === "rock") {
+         return "Spock wins";
+        }
+      else if (choice2 === "paper") {
+         return "Paper wins";
+        }
+      else if (choice2 === "scissors") {
+         return "Spock wins";
+        }
+      else {
+         return "Lizard wins";
+        }
+      }; /*closing spock brackets */ 
+}; /* closing compare function brackets */ 
+
+/* next line executes the function */ 
+compare (userChoice,computerChoice);
